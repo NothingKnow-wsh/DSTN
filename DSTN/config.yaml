@@ -1,0 +1,23 @@
+model:
+  name: FESTGCN
+  num_layers: 2
+  hidden_size: 16
+  learning_rate: 0.001
+  num_epochs: 2000
+  batch_size: 64
+  num_nodes: 145
+  sample_rate: 1
+  epsilon: 0.1
+
+data:
+  path: data/EMS
+  distance_matrix: data/EMS/adj_mx.pkl
+  spectrum_similarity_matrix: data/EMS/spectrum_similarity_matrix.npy
+  time_delay_matrix: data/EMS/time_delay_matrix.npy
+  save_path: checkpoints/EMS
+  ratio: 1
+
+wandb:
+  project: my-project
+  entity: your-wandb-username
+  key: 7f33b1b4ea7d061b899005637b69f46cfe883046
