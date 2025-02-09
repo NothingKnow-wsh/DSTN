@@ -3,7 +3,7 @@ import torch.nn as nn
 import numpy as np
 import os
 import time
-from model.FESTGCN import FESTGCN
+from model.DSTN import DSTN
 from torch.utils.data import DataLoader, TensorDataset
 import pandas as pd
 from model.util import StandardScaler, metric, masked_mae, masked_mse
@@ -23,8 +23,8 @@ def get_model(model_name, model_args):
     Returns:
         model: Model instance.
     """
-    if model_name.upper() == 'FESTGCN':
-        return FESTGCN(
+    if model_name.upper() == 'DSTN':
+        return DSTN(
             adj=model_args['adj'],
             hidden_dim=model_args['hidden_dim'],
             scaler=model_args['scaler'],
